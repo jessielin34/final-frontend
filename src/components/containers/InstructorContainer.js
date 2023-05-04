@@ -8,6 +8,20 @@ import {
 
 import { InstructorView } from "../views";
 
+import { useParams } from "react-router";
+
+import { Link } from "react-router-dom";
+
+const withRouter = (WrappedComponent) => (props) => {
+  const params = useParams();
+  return (
+    <WrappedComponent
+      {...props}
+      params={params}
+    />
+  );
+};
+
 class InstructorContainer extends Component {
   componentDidMount() {
     //getting instructor ID from url
@@ -17,11 +31,17 @@ class InstructorContainer extends Component {
 
   render() {
     return (
+      <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:100,}}>
       <InstructorView 
         instructor={this.props.instructor}
         editCourse={this.props.editCourse}
         allCourses={this.props.allCourses}
       />
+      <br />
+      <br />
+        <Link style={{border:50,backgroundColor:"#F89880",borderRadius:30,padding:30,display:"inline-block"}} to={"/"}>Home Page </Link>
+        <div style={{display:"block",border:50,backgroundColor:"#F89880",borderRadius:30,padding:100,}}></div>
+    </div>
     );
   }
 }
@@ -45,4 +65,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-export default connect(mapState, mapDispatch)(InstructorContainer);
+export default withRouter(connect(mapState, mapDispatch)(InstructorContainer));
