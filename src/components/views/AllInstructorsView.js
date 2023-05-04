@@ -5,10 +5,10 @@ const AllInstructorsView = (props) => {
   let { deleteInstructor } = props;
   if (!props.allInstructors.length) {
     return (
-      <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"garamond",margin:0,padding:400}}>
+      <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"Roboto",margin:0,padding:400}}>
       <p>There are no instructors.</p>
       <div>
-            <Link style={{backgroundColor:"#F89880",color:"black",fontFamily:"garamond",margin:0,padding:0,}} to={`/newinstructor`}>
+            <Link style={{backgroundColor:"#F89880",color:"black",fontFamily:"Roboto",margin:0,padding:0,}} to={`/newinstructor`}>
               Add New Instructor
             </Link>
           </div>
@@ -20,12 +20,12 @@ const AllInstructorsView = (props) => {
   }
 
   return (
-    <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"garamond",margin:0,padding:40}}>
+    <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"Roboto",margin:0,padding:40}}>
       <Link to={'/'}>
-      <h2 style={{backgroundColor:"#FAA0A0",fontFamily:"garamond",marginInline:50,padding:50}}> Home Page </h2>
+      <h2 style={{backgroundColor:"#FAA0A0",fontFamily:"Roboto",marginInline:50,padding:50}}> Home Page </h2>
         <div>
           <br />
-              <Link style={{display:"inline-block",backgroundColor:"#FAA0A0",color:"black",fontFamily:"garamond",margin:0,padding:40,}} to={`/newinstructor`}>
+              <Link style={{display:"inline-block",backgroundColor:"#FAA0A0",color:"black",fontFamily:"Roboto",margin:0,padding:40,}} to={`/newinstructor`}>
                 Add New Instructor
               </Link>
             </div>
@@ -34,7 +34,7 @@ const AllInstructorsView = (props) => {
       {props.allInstructors.map((instructor) => {
         let name = instructor.firstname + " " + instructor.lastname;
         return (
-          <div key={instructor.id} style={{backgroundColor:"#FAA0A0",color:"black",fontFamily:"garamond",margin:50,padding:30}}>
+          <div key={instructor.id} style={{backgroundColor:"#FAA0A0",color:"black",fontFamily:"Roboto",margin:50,padding:30}}>
           <Link to={`/instructor/${instructor.id}`}>
             <h1>{name}</h1>
           </Link>
