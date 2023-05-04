@@ -21,6 +21,20 @@ export const fetchInstructor = (instructor) => {
   };
 };
 
+export const deleteInstructor = (instructorId) => {
+  return {
+    type: at.DELETE_INSTRUCTOR,
+    payload: instructorId,
+  };
+};
+
+export const addInstructor = (instructor) => {
+  return {
+    type: at.ADD_INSTRUCTOR,
+    payload: instructor,
+  };
+};
+
 //All courses
 export const fetchAllCourses = (courses) => {
   return {

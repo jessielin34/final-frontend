@@ -7,29 +7,31 @@ const InstructorView = (props) => {
   let availableCourses = allCourses.filter(course => course.instructorId!==instructor.id);
   
   return (
-    <div>      
+    <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:40}}>      
       <h1>{instructor.firstname}</h1>
       <h3>{instructor.department}</h3>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
-        <div>Assigned courses:
+        <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:40}}> Assigned courses:
         {assignedCourses.map( course => {
           return (
             <div key={course.id}>
             <Link to={`/course/${course.id}`}>
               <h4>{course.title}</h4>
             </Link>
-            <button onClick={() => editCourse({id:course.id, instructorId: null})}>x</button>
+            <button onClick={() => editCourse({id:course.id, instructorId: null})}>
+              Remove Course
+            </button>
             </div>
           );
         })}</div>
-        <div>Available courses:
+        <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:40}}>Available courses:
         {availableCourses.map( course => {
           return (
             <div key={course.id}>
             <Link to={`/course/${course.id}`}>
               <h4>{course.title}</h4>
             </Link>
-            <button onClick={() => editCourse({id:course.id, instructorId: instructor.id})}>+</button>
+            <button onClick={() => editCourse({id:course.id, instructorId: instructor.id})}>Add Course</button>
             </div>
           );
         })}</div>
