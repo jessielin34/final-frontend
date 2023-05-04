@@ -31,7 +31,7 @@ class InstructorContainer extends Component {
 
   render() {
     return (
-      <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:100,}}>
+      <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"Roboto",margin:0,padding:100,}}>
       <InstructorView 
         instructor={this.props.instructor}
         editCourse={this.props.editCourse}
@@ -40,7 +40,7 @@ class InstructorContainer extends Component {
       <br />
       <br />
         <Link style={{border:50,backgroundColor:"#F89880",borderRadius:30,padding:30,display:"inline-block"}} to={"/"}>Home Page </Link>
-        <div style={{display:"block",border:50,backgroundColor:"#F89880",borderRadius:30,padding:100,}}></div>
+        <div style={{display:"block",border:50,backgroundColor:"#F89880",borderRadius:40,padding:90,}}></div>
     </div>
     );
   }

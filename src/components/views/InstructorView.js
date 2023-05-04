@@ -7,11 +7,11 @@ const InstructorView = (props) => {
   let availableCourses = allCourses.filter(course => course.instructorId!==instructor.id);
   
   return (
-    <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:40}}>      
+    <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"Roboto",margin:0,padding:40}}>      
       <h1>{instructor.firstname}</h1>
       <h3>{instructor.department}</h3>
       <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly"}}>
-        <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:40}}> Assigned courses:
+        <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"Roboto",margin:0,padding:40}}> Assigned courses:
         {assignedCourses.map( course => {
           return (
             <div key={course.id}>
@@ -24,7 +24,7 @@ const InstructorView = (props) => {
             </div>
           );
         })}</div>
-        <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:40}}>Available courses:
+        <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"Roboto",margin:0,padding:40}}>Available courses:
         {availableCourses.map( course => {
           return (
             <div key={course.id}>

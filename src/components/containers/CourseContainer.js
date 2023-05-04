@@ -2,6 +2,18 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchCourseThunk } from "../../store/thunks";
 import { CourseView } from "../views";
+import { useParams } from "react-router";
+
+const withRouter = (WrappedComponent) => (props) => {
+  const params = useParams();
+
+  return (
+    <WrappedComponent
+      {...props}
+      params={params}
+    />
+  );
+};
 
 class CourseContainer extends Component {
   componentDidMount() {
@@ -32,4 +44,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-export default connect(mapState, mapDispatch)(CourseContainer);
+export default withRouter(connect(mapState, mapDispatch)(CourseContainer));

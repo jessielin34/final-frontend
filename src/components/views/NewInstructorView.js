@@ -3,7 +3,7 @@ const NewInstructorView = (props) => {
   const { handleChange, handleSubmit, error } = props;
 
   return (
-    <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:40}} className="root">
+    <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"Roboto",margin:0,padding:40}} className="root">
       <div className="formContainer">
         <div className="formTitle">
           <h2
@@ -71,7 +71,7 @@ const NewInstructorView = (props) => {
       <div style={{display:"block",border:50,backgroundColor:"#F89880",borderRadius:30,padding:30}}>
         <Link to={"/"}>Home Page</Link>
       </div>
-      <div style={{backgroundColor:"#F89880",color:"blck",fontFamily:"garamond",margin:0,padding:220}}
+      <div style={{backgroundColor:"#F89880",color:"black",fontFamily:"Roboto",margin:0,padding:220}}
       ></div>
     </div>
   );
