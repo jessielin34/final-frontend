@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const NewCourseView = (props) => {
     const {handleChange, handleSubmit, error } = props;
   
@@ -9,7 +10,7 @@ const NewCourseView = (props) => {
               New Course
             </h2>
           </div>
-          <form style={{textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
+          <form style={{backgroundColor:"#FFC0CB",color:"black",fontFamily:"Roboto",display:"block",padding:20, textAlign: 'center'}} onSubmit={(e) => handleSubmit(e)}>
             <label style= {{color:'#11153e', fontWeight: 'bold'}}>Title: </label>
             <input type="text" name="title" onChange ={(e) => handleChange(e)} />
             <br/>
@@ -33,9 +34,12 @@ const NewCourseView = (props) => {
           </form>
           {error!=="" && <p>{error}</p>}
           </div>
+          <div style={{backgroundColor:"#FFC0CB",color:"black",fontFamily:"Roboto",display:"block",padding:20}}>
+            <Link to={"/"}>Home Page</Link>
+          </div>
+          <div style={{backgroundColor:"#FFC0CB",color:"black",fontFamily:"Roboto",display:"block",padding:20}}></div>
         </div>
-      
-    )
-  }
+    );
+  };
   
   export default NewCourseView;
