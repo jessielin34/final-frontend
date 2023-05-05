@@ -5,21 +5,24 @@ const AllCoursesView = (props) => {
   //courses = [{id: 300, title: "hello"}]
   if (!courses.length) {
     return (
-    <div>
+    <div style={{display:"block",border:50,backgroundColor:"#F89880",borderRadius:30,padding:30}}>
       <p>There are no courses.</p>
       <Link to={`/newcourse`}>
         <button>Add New Course</button>
       </Link>
+      <br />
+      <br />
+      <Link to={"/"}> Home Page </Link>
     </div>
     );
   }
   
   return (
-    <div>
+    <div style={{display:"block",border:50,backgroundColor:"#F89880",borderRadius:30,padding:30}}>
       {courses.map((course) => {
         let title = course.title;
         return (
-          <div key={course.id}>
+          <div style={{display:"block",border:50,backgroundColor:"#F89880",borderRadius:30,padding:30}} key={course.id}>
           <Link to={`/course/${course.id}`}>
             <h1>{title}</h1>
           </Link>
@@ -28,9 +31,13 @@ const AllCoursesView = (props) => {
         );
       }
       )}
-      <Link to={`/newcourse`}>
+      <Link style={{display:"block",border:50,backgroundColor:"#F89880",fontFamily:"Roboto",borderRadius:30,padding:30}} to={`/newcourse`}>
         <button>Add New Course</button>
       </Link>
+      <Link style={{display:"block",border:50,backgroundColor:"#F89880",fontFamily:"Roboto",borderRadius:30,padding:30}} to={`/newcourse`}>
+        <button>Home Page</button>
+      </Link>
+      <div style={{backgroundColor:"#FFC0CB",color:"black",fontFamily:"Roboto",display:"block",padding:20}}></div>
     </div>
   );
 };

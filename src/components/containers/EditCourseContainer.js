@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect, Link } from 'react-router-dom';
 
 import { fetchCourseThunk, editCourseThunk, fetchAllInstructorsThunk  } from '../../store/thunks';
+import { useParams } from 'react-router-dom';
 
 
 /*
@@ -37,6 +38,17 @@ a call to fetchCourse after each editCourse. We see that in the onClick
 functionality of the buttons controlling that portion of the UI. 
 
 */
+
+const withRouter = (WrappedComponent) => (props) => {
+  const params = useParams();
+
+  return (
+    <WrappedComponent
+      {...props}
+      params={params}
+    />
+  );
+};
 
 class EditCourseContainer extends Component {
     constructor(props){
@@ -195,4 +207,4 @@ const mapDispatch = (dispatch) => {
     })
 }
 
-export default connect(mapState, mapDispatch)(EditCourseContainer);
+export default withRouter(connect(mapState, mapDispatch)(EditCourseContainer));
